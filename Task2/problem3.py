@@ -5,7 +5,7 @@ counter = 1
 count_hit = 0
 count_miss = 0
 
-num = temp = str(randint(100,999))
+num = temp = str(randint(10 ** (N - 1) , 10 ** N - 1))
 
 
 while True:
@@ -14,10 +14,10 @@ while True:
     for i in range(N):
         if guess[i] == num[i]:
             count_hit += 1
-            temp = temp.replace(temp[i], " ")
+            temp = temp[:i] + " " + temp[i + 1:]
             
     for i in range(N):
-        if guess[i] in temp:
+        if temp[i] in guess:
             count_miss += 1
     
     if guess == num:
