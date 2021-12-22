@@ -11,7 +11,7 @@ while True:
 for i in range(num):
     students.append([])
     students[i].append(input("\nStudent name: "))
-    students[i].append(int(input("Student grade: ")))
+    students[i].append(float(input("Student grade: ")))
 
 
 # Sort the nested list by the grade    

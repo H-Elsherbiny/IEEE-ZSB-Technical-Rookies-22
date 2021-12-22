@@ -5,20 +5,21 @@ counter = 1
 count_hit = 0
 count_miss = 0
 
-num = str(randint(100,999))
-
+num = temp = str(randint(100,999))
+print(num)
 
 while True:
     guess = input(f"Guess {N}-digit numbers: ")
     
     for i in range(N):
-        if guess[i] in num:
-            if guess[i] == num[i]:
-                count_hit += 1
-                
-            else:
-                count_miss += 1
-                
+        if guess[i] == num[i]:
+            count_hit += 1
+            temp = temp.replace(temp[i], " ")
+            
+    for i in range(N):
+        if guess[i] in temp:
+            count_miss += 1
+    
     if guess == num:
         print(f"Yay you got it {counter} tries!")
         break
