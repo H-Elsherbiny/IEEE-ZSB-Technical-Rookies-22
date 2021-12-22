@@ -6,7 +6,7 @@ count_hit = 0
 count_miss = 0
 
 num = temp = str(randint(100,999))
-print(num)
+
 
 while True:
     guess = input(f"Guess {N}-digit numbers: ")
