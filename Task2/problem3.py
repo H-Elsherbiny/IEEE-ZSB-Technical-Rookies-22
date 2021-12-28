@@ -1,12 +1,11 @@
 from random import randint
 
-N = 4
+N = 3
 counter = 1
 count_hit = 0
 count_miss = 0
 
 num = randint(10 ** (N - 1) , 10 ** N - 1)
-num = 7997
 num = [int(i) for i in str(num)]
 
 while True:
