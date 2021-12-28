@@ -1,26 +1,29 @@
 from random import randint
 
-N = 3
+N = 4
 counter = 1
 count_hit = 0
 count_miss = 0
 
-num = temp = str(randint(10 ** (N - 1) , 10 ** N - 1))
-
+num = randint(10 ** (N - 1) , 10 ** N - 1)
+num = 7997
+num = [int(i) for i in str(num)]
 
 while True:
     guess = input(f"Guess {N}-digit numbers: ")
+    guess = [int(i) for i in guess]
     
     for i in range(N):
         if guess[i] == num[i]:
             count_hit += 1
-            temp = temp[:i] + " " + temp[i + 1:]
-            
-    for i in range(N):
-        if temp[i] in guess:
+            guess[i] = None
+        
+    for i in num:
+        if i in guess:
             count_miss += 1
+            guess[guess.index(i)] = None
     
-    if guess == num:
+    if count_hit == N:
         print(f"Yay you got it {counter} tries!")
         break
     
