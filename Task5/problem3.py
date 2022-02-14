@@ -1,0 +1,20 @@
+first_multiple_input = input().rstrip().split()
+n = int(first_multiple_input[0])
+k = int(first_multiple_input[1])
+q = int(first_multiple_input[2])
+
+a = list(map(int, input().rstrip().split()))
+
+queries = []
+for _ in range(q):
+    queries_item = int(input().strip())
+    queries.append(queries_item)
+    
+temp = a * 2
+num = k % n
+
+if num:
+    a = temp[n - num:2 * n - num]
+
+for i in queries:
+    print(a[i])
